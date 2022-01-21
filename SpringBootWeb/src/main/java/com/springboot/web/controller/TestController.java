@@ -1,7 +1,6 @@
 package com.springboot.web.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -69,24 +68,35 @@ public class TestController {
 //		});
 
 //		update the user of id 9
-		Optional<User> optional = userRepository.findById(9);
-		User user = optional.get();
-		System.out.println(user);
+//		Optional<User> optional = userRepository.findById(9);
+//		User user = optional.get();
+//		System.out.println(user);
+//
+//		user.setName("satyam");
+//		User save = userRepository.save(user);
+//		System.out.println(save);
 
-		user.setName("satyam");
-		User save = userRepository.save(user);
-		System.out.println(save);
-		return "user created";
-		
 //		find by id
 //		Optional<User> optional = userRepository.findById(9);
 //		User user = optional.get();
-		
-		
-		
-		
-	}
 
-	
+//		get all data
+//		List<User> manyUsers = userRepository.findAll();
+//		manyUsers.forEach(user -> System.out.println(user));
+
+//		deleting a paticular data
+//		userRepository.deleteById(9);
+//		System.out.println("deleted");
+
+//		deleting all
+
+		List<User> all = userRepository.findAll();
+		all.forEach(user -> System.out.println(user));
+
+		userRepository.deleteAll(all);
+
+		return "completed";
+
+	}
 
 }
