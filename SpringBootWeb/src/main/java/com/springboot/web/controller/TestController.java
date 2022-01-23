@@ -89,11 +89,28 @@ public class TestController {
 //		System.out.println("deleted");
 
 //		deleting all
+//		List<User> all = userRepository.findAll();
+//		all.forEach(user -> System.out.println(user));
+//
+//		userRepository.deleteAll(all);
 
-		List<User> all = userRepository.findAll();
-		all.forEach(user -> System.out.println(user));
+//		custome finder method
+//		List<User> findByName = userRepository.findByName("mamata");
 
-		userRepository.deleteAll(all);
+//		List<User> finUsers = userRepository.findByNameAndCity("akash", "chennai");
+//		finUsers.forEach(e -> System.out.println(e));
+
+//		custome queries
+		List<User> list = userRepository.getAllUsers();
+		list.forEach(e -> System.out.println(e));
+
+		System.out.println("*******______________***********");
+		List<User> userByName = userRepository.getUserByName("akash", "chennai");
+		userByName.forEach(e -> System.out.println(e));
+
+		System.out.println("_______________________________________");
+//		firing natice query
+		userRepository.getUsers("varsha").forEach(e -> System.out.println(e));
 
 		return "completed";
 
